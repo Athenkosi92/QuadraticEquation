@@ -12,20 +12,20 @@ public class Main {
         float x1, x2;
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Quadratic Equation: ax^2 + bx + c = 0");
 
-
-        System.out.print("a: ");
+        System.out.print("Please enter a: ");
         a =  sc.nextInt();
-        System.out.print("b: ");
+        System.out.print("Please enter b: ");
         b =  sc.nextInt();
-        System.out.print("c: ");
+        System.out.print("Please enter c: ");
         c =  sc.nextInt();
 
-        float underRoot = (float) sqrt((b * b) - (4 * a * c));
+        float underRoot = calculateUnderRoot(a, b, c);
 
         if (underRoot < 0) {
 
-            System.out.println("x is undefined");
+            System.out.println("x has no real roots");
         }
         else {
 
@@ -47,5 +47,9 @@ public class Main {
 
         }
 
+    }
+
+    public static float calculateUnderRoot(int a, int b, int c) {
+        return (float) sqrt((b * b) - (4 * a * c));
     }
 }
